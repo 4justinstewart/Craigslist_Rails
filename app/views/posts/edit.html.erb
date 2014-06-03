@@ -1,0 +1,8 @@
+<h3>Edit Post</h3>
+<%= form_for @post, method: :put do |f| %>
+  <%= f.text_field :title, placeholder: 'Title' %><br>
+  <%= f.text_area :description, size: "60x8", placeholder: 'Description' %><br>
+  <%= f.text_field :img_url, placeholder: 'Image URL' %><br>
+  <%= select("post", "category_id", @categories.collect {|p| [ p.title, p.id ] }, { include_blank: false }) %>
+  <%= f.submit 'Create New Post!' %>
+<% end %>

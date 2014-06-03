@@ -1,0 +1,12 @@
+<h1>Welcome to Craigslist Jr.</h1>
+
+<% @categories.each do |category| %>
+  <h2><%= category.title %></h2>
+  <ul>
+  <% category.posts.each do |p| %>
+    <li><%= link_to p.title, post_path(p) %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
